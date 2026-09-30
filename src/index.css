@@ -1,0 +1,25 @@
+/* :root {
+  --peach: #FFBB94;
+  --coral: #FB9590;
+  --rose: #DC586D;
+  --raspberry: #A33757;
+  --deep-rose: #852E4E;
+  --dark-plum: #4C1D3D;
+  background: var(--dark-plum);
+  color: var(--peach);
+  border-color: var(--rose); 
+} */
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+

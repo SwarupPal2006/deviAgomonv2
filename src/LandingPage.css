@@ -1,0 +1,238 @@
+
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   DURGA LOADING SCREEN
+===================================== */
+
+#durga-loader {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 999999;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+
+/* =====================================
+   DARK CINEMATIC OVERLAY
+===================================== */
+
+.loader-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.20),
+            rgba(0, 0, 0, 0.65)
+        );
+}
+
+
+/* =====================================
+   LOADER CONTENT
+===================================== */
+
+.loader-content {
+    width: min(90%, 600px);
+
+    text-align: center;
+
+    margin-bottom: 7vh;
+
+    animation: loaderContentIn 1.5s ease;
+}
+
+
+/* =====================================
+   TITLE
+===================================== */
+
+.loader-content h1 {
+    margin: 0 0 5px;
+
+    font-family: Georgia, "Noto Serif Bengali", serif;
+
+    font-size: clamp(32px, 6vw, 58px);
+
+    font-weight: 600;
+
+    color: #ffd36a;
+
+    text-shadow:
+        0 0 10px rgba(255, 180, 40, 0.8),
+        0 0 30px rgba(255, 100, 20, 0.7);
+}
+
+
+/* =====================================
+   MESSAGE
+===================================== */
+
+#loader-message {
+    margin: 0 0 10px;
+
+    color: #fff1c7;
+
+    font-family: "Noto Serif Bengali", Georgia, serif;
+
+    font-size: clamp(17px, 3vw, 23px);
+
+    text-shadow:
+        0 2px 8px #000;
+}
+
+
+/* =====================================
+   PROGRESS BAR
+===================================== */
+
+.loader-progress {
+    width: min(80vw, 460px);
+
+    height: 10px;
+
+    margin: auto;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    border: 1px solid rgba(255, 210, 100, 0.7);
+
+    box-shadow:
+        0 0 15px rgba(255, 160, 20, 0.5);
+}
+
+
+/* =====================================
+   PROGRESS
+===================================== */
+
+#loader-progress-bar {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff8c00,
+            #ffd166,
+            #fff0a6
+        );
+
+    box-shadow:
+        0 0 15px #ffb300;
+
+    transition: width 0.15s ease;
+}
+
+
+/* =====================================
+   PERCENTAGE
+===================================== */
+
+#loader-percent {
+    margin-top: 8px;
+
+    color: #ffd36a;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    text-shadow:
+        0 2px 6px #000;
+}
+
+
+/* =====================================
+   LOADER FADE OUT
+===================================== */
+
+#durga-loader.loader-hidden {
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =====================================
+   LOADER ENTRANCE
+===================================== */
+
+@keyframes loaderContentIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+    #durga-loader {
+        background-position: center center;
+    }
+
+    .loader-content {
+        margin-bottom: 7.5vh;
+    }
+
+    .loader-progress {
+        width: 80vw;
+    }
+    .loader-content h1 {
+    margin: 0 0 2px;
+    }
+}
+
