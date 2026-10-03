@@ -1,0 +1,604 @@
+
+/* ==========================================
+   DEVIPAKSHA — SUNSET HERO SECTION
+========================================== */
+
+.hero {
+  --hero-cream: #fff4d6;
+  --hero-gold: #ffc857;
+  --hero-orange: #ff7e36;
+  --hero-burnt: #c65324;
+  --hero-dark: #3b2118;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+  padding: 100px 6% 100px;
+
+  color: var(--hero-cream);
+  background: var(--hero-dark);
+}
+
+/* ==========================================
+   BACKGROUND IMAGE
+   Set your images in these CSS rules
+========================================== */
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  background-image: url("https://i.pinimg.com/1200x/ca/e2/70/cae2709df20d9ad0c4a52d35c820b029.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: scale(1.02);
+  animation: heroBackgroundEnter 1.5s ease-out both;
+}
+
+/* Day background */
+
+.hero-day .hero-background {
+  background-image: url("/images/durga-puja-day.jpg");
+  background-position: center 55%;
+}
+
+/* Night background */
+
+.hero-night .hero-background {
+  background-image: url("https://i.pinimg.com/736x/f7/25/7e/f7257e5638a88d4af01b5d01e8c05e22.jpg");
+  background-position: center 55%;
+}
+
+/* ==========================================
+   BACKGROUND OVERLAY
+========================================== */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background: linear-gradient(
+    90deg,
+    rgba(59, 33, 24, 0.671) 0%,
+    rgba(61, 52, 49, 0.368) 38%,
+    rgba(91, 46, 25, 0.40) 68%,
+    rgba(59, 33, 24, 0.18) 100%
+  );
+}
+
+/* Day overlay */
+
+.hero-day .hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(68, 41, 28, 0.56) 0%,
+    rgba(111, 54, 24, 0.64) 45%,
+    rgba(137, 69, 29, 0.25) 100%
+  );
+}
+
+/* Night overlay */
+
+.hero-night .hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(35, 27, 22, 0.94) 0%,
+    rgba(65, 42, 32, 0.682) 45%,
+    rgba(68, 35, 36, 0.35) 100%
+  );
+}
+
+/* ==========================================
+   DECORATIVE SUNSET GLOW
+========================================== */
+
+.hero-glow {
+  position: absolute;
+  z-index: -1;
+
+  top: 8%;
+  left: -12%;
+
+  width: 650px;
+  height: 650px;
+
+  background: radial-gradient(
+    circle,
+    rgba(238, 129, 70, 0.24) 0%,
+    rgba(255, 200, 87, 0.10) 35%,
+    transparent 70%
+  );
+
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-night .hero-glow {
+  background: radial-gradient(
+    circle,
+    rgba(255, 126, 54, 0.15) 0%,
+    rgba(139, 70, 42, 0.08) 40%,
+    transparent 70%
+  );
+}
+
+/* ==========================================
+   CONTENT CONTAINER
+========================================== */
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 760px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  animation: heroContentEnter 1s ease-out both;
+}
+
+/* ==========================================
+   DEVIPAKSHA BADGE
+========================================== */
+
+.devipaksha-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 5px 18px;
+  margin-bottom: 26px;
+
+  border: 1px solid rgba(255, 200, 87, 0.45);
+  border-radius: 50px;
+
+  background: rgba(255, 244, 214, 0.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  color: var(--hero-gold);
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.10);
+}
+
+/* ==========================================
+   MAIN BENGALI TITLE
+========================================== */
+
+.hero-main-title {
+  margin: 0 0 20px;
+
+  font-family: "Noto Serif Bengali", serif;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -1px;
+
+  color: var(--hero-cream);
+
+  text-shadow:
+    0 4px 25px rgba(0, 0, 0, 0.20),
+    0 0 45px rgba(255, 200, 87, 0.12);
+}
+
+/* ==========================================
+   TAGLINE
+========================================== */
+
+.hero-tagline {
+  margin: 0 0 12px;
+
+  font-family: "Noto Serif Bengali", serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.8;
+
+  color: var(--hero-gold);
+}
+
+/* ==========================================
+   ENGLISH SUBTITLE
+========================================== */
+
+.hero-english-sub {
+  margin: 0 0 25px;
+
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.4px;
+
+  color: rgba(255, 244, 214, 0.88);
+}
+
+/* ==========================================
+   POETRY QUOTE
+========================================== */
+
+.hero-poetry-quote {
+  position: relative;
+
+  max-width: 680px;
+  padding: 6px 0 6px 20px;
+  margin-bottom: 16px;
+
+  border-left: 3px solid var(--hero-orange);
+
+  font-family: "Noto Serif Bengali", serif;
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  line-height: 2;
+
+  color: rgba(255, 244, 214, 0.88);
+}
+
+.quote-mark {
+  display: inline-block;
+  margin: 0 5px;
+
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 0;
+
+  color: var(--hero-gold);
+  vertical-align: -7px;
+}
+
+/* ==========================================
+   BUTTON CONTAINER
+========================================== */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Primary button — countdown */
+
+.hero-buttons button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+  padding: 14px 28px;
+
+  border: 1px solid transparent;
+  border-radius: 25px;
+
+  background: linear-gradient(
+    135deg,
+    #ffc857 0%,
+    #ff9b45 55%,
+    #ff7e36 100%
+  );
+
+  color: #3b2118;
+
+  font-family: "Noto Serif Bengali", serif;
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 25px rgba(255, 126, 54, 0.24);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+.hero-buttons button:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.06);
+  box-shadow: 0 12px 32px rgba(255, 126, 54, 0.35);
+}
+
+.hero-buttons button:active {
+  transform: translateY(0);
+}
+
+/* Secondary button — Puja guide */
+
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+  padding: 13px 28px;
+
+  border: 1px solid rgba(255, 200, 87, 0.65);
+  border-radius: 25px;
+
+  background: rgba(255, 244, 214, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  color: var(--hero-cream);
+  text-decoration: none;
+
+  font-family: "Noto Serif Bengali", serif;
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255, 200, 87, 0.16);
+  border-color: var(--hero-gold);
+  color: var(--hero-gold);
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   BOTTOM INDICATOR
+========================================== */
+
+.hero-bottom {
+  position: absolute;
+  z-index: 2;
+
+  bottom: 35px;
+  left: 6%;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  color: rgba(255, 244, 214, 0.85);
+
+  font-family: "Noto Serif Bengali", serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.bottom-line {
+  display: inline-block;
+
+  width: 42px;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    var(--hero-gold),
+    var(--hero-orange)
+  );
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes heroContentEnter {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroBackgroundEnter {
+  from {
+    opacity: 0.65;
+    transform: scale(1.06);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 115px 6% 100px;
+    min-height: 90vh;
+    min-height: 90svh;
+  }
+
+  .hero-content {
+    max-width: 650px;
+  }
+
+  .hero-main-title {
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(59, 33, 24, 0.88),
+      rgba(59, 33, 24, 0.62)
+    );
+  }
+
+  .hero-glow {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 100svh;
+    padding: 115px 22px 105px;
+    align-items: center;
+  }
+
+  .hero-background {
+    background-position: 60% center;
+  }
+
+  .hero-day .hero-background,
+  .hero-night .hero-background {
+    background-position: 60% center;
+  }
+
+  .hero-overlay,
+  .hero-day .hero-overlay,
+  .hero-night .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(49, 28, 24, 0.64) 0%,
+      rgba(49, 28, 24, 0.79) 45%,
+      rgba(49, 28, 24, 0.94) 100%
+    );
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .devipaksha-badge {
+    padding: 8px 13px;
+    margin-bottom: 22px;
+    font-size: 12px;
+  }
+
+  .hero-main-title {
+    margin-bottom: 16px;
+    font-size: clamp(2.8rem, 12vw, 4rem);
+    line-height: 1.35;
+    letter-spacing: 0;
+  }
+
+  .hero-tagline {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    line-height: 1.9;
+  }
+
+  .hero-english-sub {
+    margin-bottom: 22px;
+    font-size: 0.88rem;
+    line-height: 1.8;
+  }
+
+  .hero-poetry-quote {
+    padding-left: 14px;
+    margin-bottom: 28px;
+    font-size: 0.92rem;
+    line-height: 2;
+  }
+
+  .hero-buttons {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-buttons button,
+  .hero-btn-secondary {
+    min-height: 48px;
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+
+  .hero-bottom {
+    bottom: 22px;
+    left: 22px;
+    right: 22px;
+
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    font-size: 11px;
+  }
+
+  .bottom-line {
+    width: 25px;
+  }
+
+  .hero-glow {
+    top: 5%;
+    left: -45%;
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 380px) {
+  .hero {
+    padding-right: 17px;
+    padding-left: 17px;
+  }
+
+  .hero-main-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-buttons {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-buttons button,
+  .hero-btn-secondary {
+    width: 100%;
+  }
+
+  .hero-bottom {
+    left: 12px;
+    right: 12px;
+    font-size: 10px;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-background,
+  .hero-content {
+    animation: none;
+  }
+
+  .hero-buttons button,
+  .hero-btn-secondary {
+    transition: none;
+  }
+}

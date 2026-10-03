@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../style/countdown.css"
 
 function Countdown() {
   // Mahalaya 2026
@@ -55,7 +56,7 @@ function Countdown() {
           <div className="countdown-art">
 
             <img
-              src="/311a5402f30d454b1e1df9657cdfdfac-removebg-preview.png"
+              src="https://i.pinimg.com/736x/d6/3d/38/d63d388c72ef72b8731d27071b35f0e2.jpg"
               alt="Durga"
             />
 
@@ -66,7 +67,7 @@ function Countdown() {
           <div className="countdown-main">
 
             <h2>
-              MAHALAYA 2026
+              মহাষষ্ঠী ২০২৬
             </h2>
 
             {/* DECORATIVE LINE */}

@@ -1,0 +1,546 @@
+
+/* =========================================
+   DEVI AGOMON — ABOUT PAGE
+   Elegant • Responsive • Light/Dark Mode
+========================================= */
+
+.about-page {
+  --about-bg: #fffaf5;
+  --about-card: #ffffff;
+  --about-text: #302321;
+  --about-muted: #776963;
+  --about-primary: #a52b36;
+  --about-accent: #d49a45;
+  --about-border: rgba(130, 70, 50, 0.13);
+  --about-soft: #f8eee7;
+
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 60px;
+  background: var(--about-bg);
+  color: var(--about-text);
+  font-family: inherit;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* DARK MODE
+   Add class "dark" to body or html
+========================================= */
+
+.dark .about-page,
+[data-theme="dark"] .about-page {
+  --about-bg: #11131b;
+  --about-card: #191c27;
+  --about-text: #f6eee7;
+  --about-muted: #b9b0b0;
+  --about-primary: #ff8a85;
+  --about-accent: #e8bb70;
+  --about-border: rgba(255, 255, 255, 0.09);
+  --about-soft: #20202b;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.about-header {
+  position: relative;
+  isolation: isolate;
+  min-height: 330px;
+  padding: 90px 24px 78px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--about-border);
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(212, 154, 69, 0.16),
+      transparent 65%
+    ),
+    var(--about-bg);
+}
+
+.about-header::before,
+.about-header::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 240px;
+  height: 240px;
+  border: 1px solid var(--about-border);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.about-header::before {
+  top: -150px;
+  left: -90px;
+}
+
+.about-header::after {
+  right: -100px;
+  bottom: -170px;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 9px 17px;
+  border: 1px solid var(--about-border);
+  border-radius: 50px;
+  background: var(--about-card);
+  color: var(--about-primary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.about-header h1 {
+  margin: 0;
+  color: var(--about-text);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -0.7px;
+}
+
+.about-header > p {
+  max-width: 650px;
+  margin: 18px auto 0;
+  color: var(--about-muted);
+  font-size: 1.05rem;
+  line-height: 1.95;
+}
+
+/* =========================================
+   CONTENT SECTIONS
+========================================= */
+
+.about-section {
+  width: min(100% - 48px, 1080px);
+  margin: 36px auto;
+  padding: 44px 48px;
+  border: 1px solid var(--about-border);
+  border-radius: 24px;
+  background: var(--about-card);
+  box-shadow: 0 8px 30px rgba(60, 35, 20, 0.035);
+  scroll-margin-top: 90px;
+}
+
+.about-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.about-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 17px;
+  color: var(--about-primary);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.about-content h2 {
+  position: relative;
+  margin: 0 0 25px;
+  padding-bottom: 19px;
+  color: var(--about-text);
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.about-content h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 62px;
+  height: 3px;
+  border-radius: 10px;
+  background: var(--about-accent);
+}
+
+.about-content p {
+  margin: 0 0 18px;
+  color: var(--about-muted);
+  font-size: 1rem;
+  line-height: 2;
+  text-align: justify;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   SECTION VARIATIONS
+========================================= */
+
+.chokkhudan-section {
+  border-left: 4px solid var(--about-primary);
+}
+
+.navadurga-section {
+  padding-bottom: 40px;
+}
+
+/* =========================================
+   NAVADURGA GRID
+========================================= */
+
+.navadurga-section > .about-content {
+  max-width: none;
+  margin-bottom: 34px;
+}
+
+.navadurga-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.navadurga-card {
+  position: relative;
+  min-width: 0;
+  padding: 26px 22px 24px;
+  overflow: hidden;
+  border: 1px solid var(--about-border);
+  border-radius: 17px;
+  background: var(--about-bg);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.navadurga-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--about-primary),
+    var(--about-accent)
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.navadurga-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--about-border);
+  box-shadow: 0 12px 28px rgba(70, 35, 20, 0.08);
+}
+
+.navadurga-card:hover::before {
+  opacity: 1;
+}
+
+.navadurga-card > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 39px;
+  margin-bottom: 19px;
+  border-radius: 12px;
+  background: var(--about-soft);
+  color: var(--about-primary);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.navadurga-card h3 {
+  margin: 0 0 12px;
+  color: var(--about-text);
+  font-size: 1.2rem;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.navadurga-card p {
+  margin: 0;
+  color: var(--about-muted);
+  font-size: 0.94rem;
+  line-height: 1.85;
+}
+
+/* =========================================
+   CLOSING SECTION
+========================================= */
+
+.about-closing {
+  position: relative;
+  width: min(100% - 48px, 1080px);
+  margin: 50px auto 0;
+  padding: 58px 30px;
+  overflow: hidden;
+  border: 1px solid var(--about-border);
+  border-radius: 25px;
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(212, 154, 69, 0.15),
+      transparent 75%
+    ),
+    var(--about-soft);
+  text-align: center;
+}
+
+.about-closing h2 {
+  margin: 0 0 15px;
+  color: var(--about-primary);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+}
+
+.about-closing p {
+  max-width: 620px;
+  margin: 0 auto 22px;
+  color: var(--about-muted);
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.about-closing > span {
+  display: inline-block;
+  padding: 10px 19px;
+  border: 1px solid var(--about-border);
+  border-radius: 50px;
+  background: var(--about-card);
+  color: var(--about-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .about-header {
+    min-height: 290px;
+    padding: 75px 24px 65px;
+  }
+
+  .about-section {
+    width: calc(100% - 36px);
+    padding: 35px 30px;
+    margin: 26px auto;
+  }
+
+  .navadurga-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .navadurga-card {
+    padding: 23px 19px;
+  }
+
+  .about-closing {
+    width: calc(100% - 36px);
+    margin-top: 35px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .about-page {
+    padding-bottom: 30px;
+  }
+
+  .about-header {
+    min-height: auto;
+    padding: 58px 20px 48px;
+  }
+
+  .section-label {
+    margin-bottom: 17px;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  .about-header h1 {
+    font-size: clamp(1.65rem, 7vw, 2.2rem);
+    line-height: 1.45;
+    letter-spacing: 0;
+  }
+
+  .about-header > p {
+    max-width: 440px;
+    margin-top: 13px;
+    font-size: 0.91rem;
+    line-height: 1.85;
+  }
+
+  .about-section {
+    width: calc(100% - 28px);
+    margin: 18px auto;
+    padding: 26px 19px;
+    border-radius: 18px;
+  }
+
+  .about-label {
+    margin-bottom: 13px;
+    font-size: 0.79rem;
+  }
+
+  .about-content h2 {
+    margin-bottom: 19px;
+    padding-bottom: 15px;
+    font-size: 1.45rem;
+    line-height: 1.5;
+  }
+
+  .about-content h2::after {
+    width: 48px;
+    height: 3px;
+  }
+
+  .about-content p {
+    margin-bottom: 15px;
+    font-size: 0.91rem;
+    line-height: 1.9;
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+
+  .chokkhudan-section {
+    border-left-width: 3px;
+  }
+
+  .navadurga-section {
+    padding: 26px 15px 20px;
+  }
+
+  .navadurga-section > .about-content {
+    padding: 0 4px;
+    margin-bottom: 24px;
+  }
+
+  .navadurga-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .navadurga-card {
+    padding: 17px 13px 18px;
+    border-radius: 14px;
+  }
+
+  .navadurga-card > span {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 13px;
+    border-radius: 9px;
+    font-size: 0.75rem;
+  }
+
+  .navadurga-card h3 {
+    margin-bottom: 9px;
+    font-size: 1rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .navadurga-card p {
+    font-size: 0.83rem;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+  }
+
+  .about-closing {
+    width: calc(100% - 28px);
+    margin: 25px auto 0;
+    padding: 37px 19px;
+    border-radius: 19px;
+  }
+
+  .about-closing h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-closing p {
+    margin-bottom: 18px;
+    font-size: 0.91rem;
+    line-height: 1.85;
+  }
+
+  .about-closing > span {
+    padding: 9px 15px;
+    font-size: 0.85rem;
+  }
+}
+
+/* =========================================
+   EXTRA SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+  .about-header {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .about-section {
+    width: calc(100% - 20px);
+    padding: 22px 14px;
+  }
+
+  .navadurga-section {
+    padding: 22px 10px 16px;
+  }
+
+  .navadurga-grid {
+    gap: 8px;
+  }
+
+  .navadurga-card {
+    padding: 14px 10px;
+  }
+
+  .navadurga-card h3 {
+    font-size: 0.91rem;
+  }
+
+  .navadurga-card p {
+    font-size: 0.78rem;
+  }
+
+  .about-closing {
+    width: calc(100% - 20px);
+    padding: 30px 14px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page *,
+  .about-page *::before,
+  .about-page *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

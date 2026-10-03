@@ -1,0 +1,466 @@
+
+/* ==========================================
+   DEVIPAKSHA — MAHALAYA COUNTDOWN
+   Clean Sunset UI
+========================================== */
+
+.countdown-section {
+  --cream: #fff9ed;
+  --cream-dark: #fff0d2;
+  --orange: #f97316;
+  --sunset: #ff9b45;
+  --gold: #ffc857;
+  --burnt: #c65324;
+  --brown: #3b2118;
+  --muted: #896b58;
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(255, 200, 87, 0.16),
+      transparent 32%
+    ),
+    linear-gradient(135deg, #fff9ed72 0%, #fff2dc 100%);
+}
+
+/* Subtle decorative glow */
+
+.countdown-section::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 100px;
+  top: -180px;
+  right: -100px;
+
+  background: rgba(255, 155, 69, 0.12);
+  filter: blur(80px);
+  border-radius: 25px;
+  pointer-events: none;
+}
+
+.countdown-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 5px auto;
+}
+
+/* ==========================================
+   MAIN COUNTDOWN BOX
+========================================== */
+
+.countdown-wrapper {
+  display: grid;
+  grid-template-columns: 0.85fr 1.8fr 0.65fr;
+  align-items: stretch;
+  gap: 0;
+
+  height: 270px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(198, 83, 36, 0.14);
+  border-radius: 28px;
+
+  box-shadow:
+    0 20px 60px rgba(104, 57, 30, 0.08),
+    0 2px 8px rgba(104, 57, 30, 0.03);
+}
+
+/* ==========================================
+   LEFT — DURGA ART
+========================================== */
+
+.countdown-art {
+  position: relative;
+  
+  overflow: hidden;
+  background: #f4d5ad;
+}
+
+.countdown-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    0deg,
+    rgba(80, 37, 19, 0.18),
+    transparent 45%
+  );
+
+  pointer-events: none;
+}
+
+.countdown-art img {
+  display: block;
+  width: 100%;
+  height: 270px;
+  object-position: center;
+
+  transition: transform 0.7s ease;
+}
+
+.countdown-wrapper:hover .countdown-art img {
+  transform: scale(1.035);
+}
+
+/* ==========================================
+   CENTER — COUNTDOWN CONTENT
+========================================== */
+
+.countdown-main {
+  min-width: 0;
+  padding: 20px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.countdown-main h2 {
+  margin: 0;
+
+  color: var(--burnt);
+  font-family: "Georgia", serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.3;
+}
+
+/* Decorative ornament */
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: min(220px, 80%);
+  margin: 20px auto 28px;
+}
+
+.ornament span {
+  height: 1px;
+  flex: 1;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    var(--orange)
+  );
+}
+
+.ornament span:last-child {
+  transform: rotate(180deg);
+}
+
+.ornament b {
+  color: var(--orange);
+  font-size: 19px;
+  line-height: 1;
+}
+
+/* ==========================================
+   TIMER GRID
+========================================== */
+
+.countdown-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.timer-card {
+  min-width: 0;
+  padding: 20px 8px 17px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  background: linear-gradient(
+    180deg,
+    #fffaf1 0%,
+    #fff0d8 100%
+  );
+
+  border: 1px solid rgba(249, 115, 22, 0.15);
+  border-radius: 16px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.timer-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(249, 115, 22, 0.4);
+
+  box-shadow: 0 10px 24px rgba(198, 83, 36, 0.09);
+}
+
+.timer-digits {
+  font-family: "Georgia", serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+
+  color: var(--orange);
+}
+
+.timer-label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ==========================================
+   COMPLETED MESSAGE
+========================================== */
+
+.countdown-completed {
+  width: 100%;
+  padding: 22px 15px;
+
+  background: linear-gradient(
+    135deg,
+    #fff4d6,
+    #ffe4b9
+  );
+
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  border-radius: 18px;
+}
+
+.countdown-completed h3 {
+  margin: 0 0 10px;
+
+  color: var(--burnt);
+  font-family: "Noto Serif Bengali", serif;
+  font-size: 1.8rem;
+}
+
+.countdown-completed p {
+  margin: 0;
+  color: var(--muted);
+  font-family: "Noto Serif Bengali", serif;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* ==========================================
+   RIGHT — BENGALI QUOTE
+========================================== */
+
+.countdown-quote {
+  position: relative;
+  padding: 35px 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: linear-gradient(
+    155deg,
+    #fff1d4 0%,
+    #ffe2b5 100%
+  );
+
+  border-left: 1px solid rgba(198, 83, 36, 0.10);
+}
+
+.quote-flower {
+  color: var(--orange);
+  font-size: 27px;
+  line-height: 1;
+}
+
+.countdown-quote p {
+  margin: 22px 0;
+
+  color: var(--burnt);
+  font-family: "Noto Serif Bengali", serif;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  line-height: 2.1;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1050px) {
+  .countdown-section {
+    padding: 75px 4%;
+  }
+
+  .countdown-wrapper {
+    grid-template-columns: 0.75fr 1.5fr;
+  }
+
+  .countdown-art {
+    min-height: 330px;
+  }
+
+  .countdown-art img {
+    min-height: 330px;
+  }
+
+  .countdown-main {
+    padding: 35px 24px;
+  }
+
+  .countdown-quote {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 22px;
+    padding: 18px 25px;
+
+    border-left: none;
+    border-top: 1px solid rgba(198, 83, 36, 0.12);
+  }
+
+  .countdown-quote p {
+    margin: 8px 0;
+    font-size: 1rem;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+  .countdown-section {
+  padding: 2px 10px;
+}
+
+.countdown-wrapper {
+  grid-template-columns: 1fr;
+  border-radius: 18px;
+}
+
+.countdown-art {
+  display: none;
+}
+
+.countdown-main {
+  padding: 24px 12px;
+}
+
+.countdown-main h2 {
+  font-size: clamp(1.1rem, 5vw, 1.7rem);
+  letter-spacing: 1px;
+}
+
+.ornament {
+  margin: 12px auto 18px;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  width: 100%;
+}
+
+.timer-card {
+  min-width: 0;
+  padding: 14px 2px 12px;
+  border-radius: 10px;
+  gap: 6px;
+}
+
+.timer-digits {
+  font-size: clamp(1.1rem, 5.5vw, 2.2rem);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.timer-label {
+  font-size: clamp(8px, 2.5vw, 10px);
+  white-space: nowrap;
+}
+
+.countdown-quote {
+  grid-column: 1 / -1;
+  gap: 10px;
+  padding: 16px 10px;
+}
+
+.countdown-quote p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.quote-flower {
+  font-size: 21px;
+}
+
+.countdown-completed h3 {
+  font-size: 1.5rem;
+}
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media (max-width: 360px) {
+  .countdown-section {
+    padding: 45px 12px;
+  }
+
+  .countdown-main {
+    padding: 28px 12px;
+  }
+
+  .countdown-grid {
+    gap: 5px;
+  }
+
+  .timer-card {
+    padding: 14px 2px 12px;
+  }
+
+  .timer-digits {
+    font-size: 1.45rem;
+  }
+
+  .timer-label {
+    font-size: 9px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .countdown-art img,
+  .timer-card {
+    transition: none;
+  }
+}

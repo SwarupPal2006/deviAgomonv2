@@ -1,25 +1,205 @@
-/* :root {
-  --peach: #FFBB94;
-  --coral: #FB9590;
-  --rose: #DC586D;
-  --raspberry: #A33757;
-  --deep-rose: #852E4E;
-  --dark-plum: #4C1D3D;
-  background: var(--dark-plum);
-  color: var(--peach);
-  border-color: var(--rose); 
-} */
+
+/* =========================================
+   SUNSET COLOR PALETTE
+========================================= */
+
+:root {
+  --sunset-orange: #FF7E36;
+  --warm-orange: #F97316;
+  --golden-yellow: #FFC857;
+  --amber: #E9A23B;
+  --cream: #FFF4D6;
+  --soft-cream: #FFF9ED;
+  --peach: #FFD6A5;
+  --coral: #FF9B73;
+  --burnt-orange: #C65324;
+  --deep-orange: #8F351B;
+  --dark-brown: #3B2118;
+
+  /* Backgrounds */
+  --bg-primary: #FFF9ED;
+  --bg-secondary: #FFF0D2;
+  --bg-gradient: linear-gradient(
+    135deg,
+    #FFF4D6 0%,
+    #FFE0B2 45%,
+    #FFC078 100%
+  );
+
+  /* Text */
+  --text-primary: #3B2118;
+  --text-secondary: #80513A;
+  --text-light: #FFF9ED;
+
+  /* Components */
+  --accent: #F97316;
+  --accent-hover: #C65324;
+  --border-color: rgba(198, 83, 36, 0.2);
+  --card-bg: rgba(255, 249, 237, 0.85);
+
+  /* Shadows */
+  --sunset-shadow: 0 8px 25px rgba(143, 53, 27, 0.12);
+}
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
 
 html,
 body,
 #root {
-    width: 100%;
-    min-height: 100%;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  line-height: 1.6;
 }
 
+/* =========================================
+   HEADINGS & TEXT
+========================================= */
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--deep-orange);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button,
+.btn {
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--sunset-orange),
+    var(--warm-orange)
+  );
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 24px;
+  cursor: pointer;
+  box-shadow: var(--sunset-shadow);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(
+    135deg,
+    var(--warm-orange),
+    var(--burnt-orange)
+  );
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   COMMON CARDS
+========================================= */
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  box-shadow: var(--sunset-shadow);
+}
+
+/* =========================================
+   SECTION BACKGROUNDS
+========================================= */
+
+.section-light {
+  background: var(--bg-primary);
+}
+
+.section-warm {
+  background: var(--bg-gradient);
+}
+
+.section-orange {
+  background: linear-gradient(
+    135deg,
+    var(--sunset-orange),
+    var(--burnt-orange)
+  );
+  color: white;
+}
+
+/* =========================================
+   SELECTION & SCROLLBAR
+========================================= */
+
+::selection {
+  background: var(--golden-yellow);
+  color: var(--dark-brown);
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sunset-orange);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--burnt-orange);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+img,
+video {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+}

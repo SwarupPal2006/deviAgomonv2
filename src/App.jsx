@@ -5,15 +5,15 @@ import Navbar from "./components/navber";
 import Home from "./pages/Home";
 import Guide from "./pages/pujaGuide";
 // import Dhak from "./pages/Dhak";
-// import Schedule from "./pages/Schedule";
+import Schedule from "./pages/Schedule";
 // import Countdown from "./pages/Countdown";
-// import About from "./pages/About";
+import About from "./pages/About";
 
 function App() {
   return (
     
     <>
-      <LandingPage />;
+      <LandingPage />
       {/* Navbar stays visible on every page */}
       <Navbar />
 
@@ -25,13 +25,10 @@ function App() {
 
           <Route path="/puja-guide" element={<Guide />} />
 
-          {/* <Route path="/dhak" element={<Dhak />} />
-
           <Route path="/schedule" element={<Schedule />} />
 
-          <Route path="/countdown" element={<Countdown />} /> */}
 
-          {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/about" element={<About />} />
 
         </Routes>
       </main>

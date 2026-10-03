@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./../App.css";
+import "../style/hero.css";
 
 function getTimeMode() {
   const hour = new Date().getHours();
@@ -91,7 +91,7 @@ function Hero() {
                     });
                    }}
               >
-             🕰️ কাউন্টডাউন দেখুন
+             কাউন্টডাউন দেখুন
             </button>
 
 
@@ -99,7 +99,7 @@ function Hero() {
               to="/puja-guide"
               className="hero-btn hero-btn-secondary"
             >
-              🌺 পুজো গাইড
+              পুজো গাইড
             </Link>
 
           </div>
@@ -107,59 +107,7 @@ function Hero() {
         </div>
 
 
-        {/* =========================
-            RIGHT VIDEO
-        ========================= */}
 
-        <div className="hero-video-wrapper">
-
-          <div className="hero-video-frame">
-
-            <video
-              className="hero-video"
-              autoPlay
-              muted
-              loop
-              playsInline
-            >
-              <source
-                src="/Create_a_cinematic_second_p.mp4"
-                type="video/mp4"
-              />
-
-              Your browser does not support video.
-            </video>
-
-            {/* Video overlay */}
-            <div className="video-overlay"></div>
-
-
-            {/* Video text */}
-            <div className="video-caption">
-
-              <span className="video-caption-small">
-                দেবীর আগমনী
-              </span>
-
-              <span className="video-caption-main">
-                মা আসছেন 🌺
-              </span>
-
-            </div>
-
-          </div>
-
-
-          {/* Small floating decoration */}
-          <div className="video-decoration decoration-one">
-            ✦
-          </div>
-
-          <div className="video-decoration decoration-two">
-            ✧
-          </div>
-
-        </div>
 
       </div>
 
